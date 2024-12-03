@@ -1,0 +1,2123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Dynamic Portfolio - Shravani Jitendra Patil</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    
+    
+    
+    /* Sparkling Black Theme */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #000000, #1a1a1a); /* Gradient black background */
+    color: #e0e0e0; /* Light text color for readability */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Adding subtle sparkling effect */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(rgba(255, 255, 255, 0.2), transparent 70%);
+    background-size: 10px 10px;
+    pointer-events: none;
+    animation: sparkle 5s infinite;
+    z-index: 1;
+}
+
+/* Sparkling animation */
+@keyframes sparkle {
+    0%, 100% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 10px 10px;
+    }
+}
+
+/* Add dynamic hover effects for interactive elements */
+a {
+    color: #1abc9c; /* Attractive teal for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #16a085; /* Slightly darker teal on hover */
+}
+
+/* Buttons with glowing effect */
+button {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: #ecf0f1;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #34495e, #2c3e50);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5), 0 0 10px rgba(26, 188, 156, 0.8);
+    transform: translateY(-3px);
+}
+
+/* Attractive container for dynamic content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(44, 62, 80, 0.9); /* Slight transparency for depth */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    position: relative;
+}
+
+/* Add subtle animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+    
+    /* Navbar Styling */
+    .navbar {
+        background: linear-gradient(90deg, #000000, #434343); /* Gradient black shades */
+        padding: 10px 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Enhanced shadow for depth */
+        border-bottom: 2px solid #f1c40f; /* Gold accent for bottom border */
+        transition: all 0.3s ease-in-out; /* Smooth hover effect */
+        position: relative;
+        overflow: hidden; /* For sparkle effect containment */
+      }
+      
+      /* Add sparkle effect */
+      .navbar::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -50%;
+        width: 200%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 1%, rgba(255, 255, 255, 0) 70%);
+        animation: sparkle 6s infinite linear;
+        pointer-events: none;
+        z-index: 1; /* Make sure it doesn't cover content */
+      }
+      
+      @keyframes sparkle {
+        0% {
+          transform: translateX(-50%);
+        }
+        100% {
+          transform: translateX(50%);
+        }
+      }
+      
+      /* Navbar links */
+      .navbar a {
+        color: #ecf0f1; /* Light text for contrast */
+        text-decoration: none;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        z-index: 2; /* Place above sparkle effect */
+      }
+      
+      .navbar a:hover {
+        background-color: #f1c40f; /* Gold hover effect */
+        color: #000000; /* Invert text color */
+      }
+      
+      /* Add hover scaling effect */
+      .navbar:hover {
+        transform: scale(1.02); /* Slight scaling for dynamic feel */
+      }
+      
+
+      .navbar-brand {
+        font-size: 1.8rem; /* Slightly larger for emphasis */
+        font-weight: bold;
+        color: #ecf0f1 !important; /* Soft light color */
+        text-shadow: 2px 2px 5px #000000; /* Glow effect for text */
+        transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth transitions */
+        position: relative; /* For sparkles */
+        z-index: 2; /* Ensure it’s above sparkles */
+      }
+      
+      /* Add sparkle effect */
+      .navbar-brand::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 200%;
+        height: 100%;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+        opacity: 0.7;
+        pointer-events: none;
+        animation: brand-sparkle 3s infinite linear;
+        z-index: -1;
+      }
+      
+      @keyframes brand-sparkle {
+        0% {
+          transform: translateX(-100%);
+        }
+        100% {
+          transform: translateX(100%);
+        }
+      }
+      
+      /* Hover effect for the brand */
+      .navbar-brand:hover {
+        color: #f1c40f !important; /* Gold hover effect */
+        text-shadow: 3px 3px 8px #f1c40f; /* Glow turns gold */
+      }
+      
+
+      .navbar-brand {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #ecf0f1 !important; /* Light text */
+        text-shadow: 2px 2px 5px #000000; /* Subtle glow */
+        transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+        position: relative;
+      }
+      
+      /* Sparkle effect on hover */
+      .navbar-brand:hover {
+        color: #ffeb3b !important; /* Bright yellow hover effect */
+        text-shadow: 4px 4px 10px #ffeb3b; /* Intense yellow glow */
+        transform: scale(1.1); /* Slight enlargement for dynamic feel */
+      }
+      
+      /* Sparkling line animation under brand */
+      .navbar-brand::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.6), rgba(255, 235, 59, 0.8), rgba(255, 255, 255, 0.6));
+        opacity: 0;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+      }
+      
+      /* Hover effect for sparkling underline */
+      .navbar-brand:hover::after {
+        opacity: 1;
+        transform: scaleX(1); /* Expand the line */
+      }
+      
+
+      .navbar-nav .nav-link {
+        color: #ecf0f1 !important; /* Soft light color */
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 8px 15px;
+        border-radius: 30px;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.8), rgba(67, 67, 67, 0.8)); /* Subtle gradient */
+        text-shadow: 1px 1px 3px #000000; /* Subtle glow for depth */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+        transition: all 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+        position: relative;
+        overflow: hidden; /* For sparkle effects */
+      }
+      
+      /* Hover Effect */
+      .navbar-nav .nav-link:hover {
+        color: #f1c40f !important; /* Gold hover color */
+        background: linear-gradient(90deg, #f39c12, #e74c3c); /* Dynamic gradient on hover */
+        text-shadow: 2px 2px 5px #f1c40f; /* Bright gold glow */
+        box-shadow: 0 4px 10px rgba(255, 215, 0, 0.7); /* Golden shadow */
+        transform: scale(1.1); /* Slight enlargement for dynamic feel */
+      }
+      
+      /* Sparkle animation */
+      .navbar-nav .nav-link::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 200%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 1%, rgba(255, 255, 255, 0) 50%);
+        opacity: 0.8;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        animation: link-sparkle 5s infinite linear;
+      }
+      
+      @keyframes link-sparkle {
+        from {
+          transform: translateX(-100%);
+        }
+        to {
+          transform: translateX(100%);
+        }
+      }
+      
+      /* Active link styling */
+      .navbar-nav .nav-link.active {
+        color: #ffeb3b !important; /* Bright yellow for active state */
+        background: linear-gradient(90deg, #000000, #434343); /* Sleek black gradient */
+        box-shadow: 0 4px 15px rgba(255, 235, 59, 0.8); /* Glow for active state */
+        text-shadow: 3px 3px 8px #ffeb3b; /* Bright text shadow */
+      }
+      
+
+      .navbar-nav .nav-link {
+        color: #ecf0f1 !important; /* Soft light color */
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 8px 15px;
+        border-radius: 30px;
+        background: linear-gradient(90deg, rgba(0, 0, 0, 0.8), rgba(67, 67, 67, 0.8)); /* Black gradient */
+        text-shadow: 1px 1px 3px #000000; /* Subtle text glow */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Light shadow for depth */
+        transition: all 0.3s ease; /* Smooth hover effect */
+        position: relative; /* For effects */
+        overflow: hidden;
+      }
+      
+      /* Hover effect */
+      .navbar-nav .nav-link:hover {
+        background: rgba(255, 255, 255, 0.1); /* Subtle translucent overlay */
+        color: #e74c3c !important; /* Vibrant red hover color */
+        text-shadow: 2px 2px 5px #e74c3c; /* Red glow for text */
+        transform: scale(1.05); /* Slight enlargement for emphasis */
+        box-shadow: 0 4px 10px rgba(231, 76, 60, 0.5); /* Red glow shadow */
+      }
+      
+      /* Sparkle animation */
+      .navbar-nav .nav-link::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 200%;
+        height: 100%;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+        opacity: 0.8;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        animation: sparkle-hover 3s infinite linear;
+        z-index: -1; /* Behind the text */
+      }
+      
+      @keyframes sparkle-hover {
+        from {
+          transform: translateX(-100%);
+        }
+        to {
+          transform: translateX(100%);
+        }
+      }
+      
+
+      .navbar-nav .active {
+        background: linear-gradient(90deg, #e74c3c, #c0392b); /* Vibrant red gradient */
+        color: #ffffff !important; /* Bright white text for contrast */
+        border-radius: 30px;
+        box-shadow: 0 4px 10px rgba(231, 76, 60, 0.5); /* Subtle glow effect */
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6); /* Depth for text */
+        position: relative;
+        transition: all 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+        overflow: hidden; /* For effects */
+      }
+      
+      /* Add sparkle effect */
+      .navbar-nav .active::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 200%;
+        height: 100%;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+        opacity: 0.8;
+        pointer-events: none;
+        z-index: 1; /* Sparkle effect above background */
+        animation: active-sparkle 3s infinite linear;
+      }
+      
+      @keyframes active-sparkle {
+        from {
+          transform: translateX(-100%);
+        }
+        to {
+          transform: translateX(100%);
+        }
+      }
+      
+      /* Hover effect for active link */
+      .navbar-nav .active:hover {
+        background: linear-gradient(90deg, #ff6f61, #d35400); /* Lighter gradient on hover */
+        transform: scale(1.05); /* Slight enlargement for emphasis */
+        box-shadow: 0 6px 15px rgba(255, 87, 34, 0.7); /* Brighter glow on hover */
+      }
+      
+
+/* Search Bar */
+.navbar .search-bar {
+    margin-left: auto;
+    position: relative;
+    width: 250px; /* Adjust width as needed */
+  }
+  
+  .navbar .search-bar input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #2c3e50, #000000); /* Gradient black background */
+    color: #ecf0f1; /* Light text */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    transition: all 0.3s ease; /* Smooth transitions */
+    font-size: 1rem;
+    outline: none;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle text glow */
+  }
+  
+  /* Search bar hover and focus effect */
+  .navbar .search-bar input:focus,
+  .navbar .search-bar input:hover {
+    background: linear-gradient(90deg, #434343, #1e1e1e); /* Darker gradient on hover/focus */
+    border-color: #f1c40f; /* Gold border highlight */
+    color: #ffffff; /* Bright white text */
+    box-shadow: 0 4px 10px rgba(241, 196, 15, 0.5); /* Gold glow */
+    transform: scale(1.05); /* Slight enlargement */
+  }
+  
+  /* Search icon inside the search bar */
+  .navbar .search-bar .icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ecf0f1; /* Light icon color */
+    font-size: 1.2rem;
+    pointer-events: none;
+    transition: color 0.3s ease;
+  }
+  
+  /* Icon hover effect */
+  .navbar .search-bar input:focus ~ .icon,
+  .navbar .search-bar input:hover ~ .icon {
+    color: #f1c40f; /* Gold color for icon on hover/focus */
+  }
+  
+
+/* Search Input */
+.search-input {
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    outline: none;
+    background: linear-gradient(90deg, #2c3e50, #000000); /* Dark gradient background */
+    color: #ecf0f1; /* Light text */
+    font-size: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Subtle text glow */
+    transition: all 0.3s ease; /* Smooth transition */
+    position: relative;
+    z-index: 1; /* Ensure the input is above any sparkle effect */
+  }
+  
+  /* Focus effect */
+  .search-input:focus {
+    background: linear-gradient(90deg, #434343, #1e1e1e); /* Darker gradient on focus */
+    color: #ffffff; /* White text on focus */
+    box-shadow: 0 4px 10px rgba(241, 196, 15, 0.7); /* Gold glow when focused */
+    transform: scale(1.05); /* Slight zoom-in for focus */
+    text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.7); /* Brighter glow effect */
+  }
+  
+  /* Add sparkle animation */
+  .search-input::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+    opacity: 0.6;
+    pointer-events: none;
+    animation: sparkle-effect 4s infinite linear;
+    z-index: -1; /* Place behind the input */
+  }
+  
+  /* Sparkle animation */
+  @keyframes sparkle-effect {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  /* Placeholder text style */
+  .search-input::placeholder {
+    color: rgba(236, 240, 241, 0.6); /* Subtle light color for placeholder */
+    font-style: italic;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Slight shadow for placeholder */
+  }
+  
+
+/* Focus effect for search input */
+.search-input:focus {
+    background: linear-gradient(90deg, #434343, #1e1e1e); /* Dark gradient background */
+    color: #ffffff; /* White text on focus */
+    border: 2px solid #f1c40f; /* Gold border for focus */
+    box-shadow: 0 6px 15px rgba(255, 215, 0, 0.6); /* Gold glow around input */
+    transform: scale(1.05); /* Slight zoom-in effect */
+    text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.8); /* Brighter text glow */
+    outline: none; /* Remove outline */
+    position: relative;
+  }
+  
+  /* Add sparkle animation effect */
+  .search-input:focus::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    opacity: 0.5;
+    pointer-events: none;
+    animation: sparkle-focus 3s infinite linear;
+    z-index: -1; /* Place the sparkle behind the input */
+  }
+  
+  /* Sparkle animation */
+  @keyframes sparkle-focus {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+
+/* Search Button */
+.search-btn {
+    background-color: #e74c3c; /* Red background */
+    border: none;
+    color: white;
+    border-radius: 50%; /* Circular button */
+    padding: 10px 15px;
+    margin-left: 8px;
+    transition: all 0.3s ease; /* Smooth transition */
+    cursor: pointer; /* Pointer on hover */
+    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.6); /* Subtle red glow */
+    position: relative;
+    overflow: hidden; /* For sparkle effect */
+  }
+  
+  /* Hover effect */
+  .search-btn:hover {
+    background-color: #c0392b; /* Darker red on hover */
+    box-shadow: 0 6px 15px rgba(231, 76, 60, 0.8); /* Brighter red glow on hover */
+    transform: scale(1.1); /* Slight zoom-in on hover */
+  }
+  
+  /* Sparkle animation for button */
+  .search-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    opacity: 0.6;
+    pointer-events: none;
+    animation: sparkle-button 3s infinite linear;
+    z-index: -1; /* Place the sparkle effect behind the button */
+  }
+  
+  /* Sparkle animation */
+  @keyframes sparkle-button {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+
+/* Search Button Hover Effect */
+.search-btn:hover {
+    background-color: #c0392b; /* Darker red on hover */
+    box-shadow: 0 6px 15px rgba(231, 76, 60, 0.8); /* Bright red glow on hover */
+    transform: scale(1.1); /* Slight zoom-in effect on hover */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle shadow for text */
+  }
+  
+  /* Sparkle animation for button on hover */
+  .search-btn:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0));
+    opacity: 0.7;
+    pointer-events: none;
+    animation: sparkle-button-hover 3s infinite linear;
+    z-index: -1; /* Place sparkle behind the button */
+  }
+  
+  /* Sparkle animation keyframe */
+  @keyframes sparkle-button-hover {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+
+    
+    /* Hero Section */
+/* Hero Section */
+.hero-section {
+    position: relative;
+    background: linear-gradient(to right, #1e2a47, #3a4e7e); /* Darker gradient background */
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Strong shadow for depth */
+    overflow: hidden;
+    z-index: 0;
+  }
+  
+  /* Sparkle effect for the hero section */
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    opacity: 0.6;
+    pointer-events: none;
+    animation: sparkle-effect 3s infinite linear;
+    z-index: 1; /* Put the sparkle behind text */
+  }
+  
+  /* Sparkle animation */
+  @keyframes sparkle-effect {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  /* Hero Section Text */
+  .hero-section h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4); /* Text shadow for depth */
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Text hover effect */
+  .hero-section h1:hover {
+    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.6); /* Stronger glow effect */
+    transform: scale(1.05); /* Slight zoom-in effect */
+  }
+  
+  /* Hero Section Button */
+  .hero-section .cta-btn {
+    background-color: #f1c40f; /* Bright yellow button */
+    color: #2c3e50; /* Dark text color */
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(241, 196, 15, 0.4);
+    transition: all 0.3s ease;
+  }
+  
+  /* Hover effect for button */
+  .hero-section .cta-btn:hover {
+    background-color: #f39c12; /* Darker yellow on hover */
+    box-shadow: 0 6px 15px rgba(241, 196, 15, 0.6);
+    transform: scale(1.1); /* Slight zoom-in effect on hover */
+  }
+  
+
+/* Sparkle Effect for Hero Section */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent); /* Soft sparkle effect */
+    transform: rotate(45deg); /* Rotated sparkle effect */
+    animation: sparkle-effect 3s infinite linear; /* Continuous sparkle movement */
+    z-index: 0;
+  }
+  
+  /* Sparkle Animation */
+  @keyframes sparkle-effect {
+    0% {
+      transform: rotate(45deg) translateX(-100%) translateY(-100%);
+    }
+    50% {
+      transform: rotate(45deg) translateX(100%) translateY(100%);
+    }
+    100% {
+      transform: rotate(45deg) translateX(-100%) translateY(-100%);
+    }
+  }
+  
+  /* Additional enhancement: adding a subtle glow */
+  .hero-section::before {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Soft glow around sparkle */
+    opacity: 0.7; /* Semi-transparent effect */
+  }
+  
+
+/* Hero Section Heading */
+.hero-section h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    z-index: 1;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-shadow: 3px 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    color: #ffffff; /* White text */
+    animation: fadeInUp 1.5s ease-out; /* Fade-in animation */
+    position: relative;
+  }
+  
+  /* Text Hover Effect */
+  .hero-section h1:hover {
+    color: #f39c12; /* Gold color on hover */
+    text-shadow: 3px 4px 12px rgba(0, 0, 0, 0.4); /* Stronger glow effect */
+    transform: translateY(-5px); /* Slight upward movement on hover */
+  }
+  
+  /* Fade In Animation */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Sparkle Animation for Hero Heading */
+  .hero-section h1::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    opacity: 0.5;
+    pointer-events: none;
+    transform: translate(-50%, -50%) rotate(45deg); /* Rotate sparkle effect */
+    animation: sparkle-heading 3s infinite linear; /* Continuous sparkle animation */
+    z-index: -1; /* Behind the text */
+  }
+  
+  /* Sparkle Animation for Heading */
+  @keyframes sparkle-heading {
+    0% {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(-100%) translateY(-100%);
+    }
+    50% {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(100%) translateY(100%);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(-100%) translateY(-100%);
+    }
+  }
+  
+
+/* Hero Section Paragraph */
+.hero-section p {
+    font-size: 1.5rem;
+    z-index: 1;
+    opacity: 0.9; /* Slightly increased opacity */
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 800px;
+    color: #ecf0f1; /* Light text color for contrast */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+  }
+  
+  /* Hover Effect for Paragraph */
+  .hero-section p:hover {
+    color: #f39c12; /* Gold color on hover */
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.4); /* Stronger shadow for hover effect */
+    transform: translateY(-5px); /* Slight upward movement on hover */
+  }
+  
+  /* Sparkle Animation for Paragraph */
+  .hero-section p::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    opacity: 0.4;
+    pointer-events: none;
+    transform: translate(-50%, -50%) rotate(45deg); /* Rotate sparkle effect */
+    animation: sparkle-paragraph 3s infinite linear; /* Continuous sparkle animation */
+    z-index: -1; /* Behind the text */
+  }
+  
+  /* Sparkle Animation for Paragraph */
+  @keyframes sparkle-paragraph {
+    0% {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(-100%) translateY(-100%);
+    }
+    50% {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(100%) translateY(100%);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(-100%) translateY(-100%);
+    }
+  }
+  
+
+/* Hero Button */
+.hero-btn {
+    background-color: #e74c3c; /* Red background */
+    color: #ffffff; /* White text */
+    padding: 16px 40px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+    z-index: 1;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(231, 76, 60, 0.3); /* Subtle shadow for depth */
+  }
+  
+  /* Hover Effect for Hero Button */
+  .hero-btn:hover {
+    background-color: #c0392b; /* Darker red on hover */
+    transform: translateY(-5px); /* Slight upward movement */
+    box-shadow: 0 6px 15px rgba(231, 76, 60, 0.6); /* Stronger shadow on hover */
+    color: #f1c40f; /* Change text color to gold */
+  }
+  
+  /* Sparkle Effect for Hero Button */
+  .hero-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    opacity: 0.4;
+    pointer-events: none;
+    transform: translate(-50%, -50%) rotate(45deg); /* Rotated sparkle effect */
+    animation: sparkle-button 3s infinite linear; /* Continuous sparkle animation */
+    z-index: -1; /* Behind the button */
+  }
+  
+  /* Sparkle Animation for Button */
+  @keyframes sparkle-button {
+    0% {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(-100%) translateY(-100%);
+    }
+    50% {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(100%) translateY(100%);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(-100%) translateY(-100%);
+    }
+  }
+  
+/* Hero Button Hover Effect */
+.hero-btn:hover {
+    background-color: #c0392b; /* Darker red on hover */
+    transform: translateY(-10px); /* Slight upward movement */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(231, 76, 60, 0.5); /* Glow effect on hover */
+    color: #f1c40f; /* Change text color to gold */
+    transition: all 0.3s ease-in-out; /* Smooth transition */
+  }
+  
+  /* Sparkle Animation for Button Hover */
+  .hero-btn:hover::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    opacity: 0.6;
+    pointer-events: none;
+    transform: translate(-50%, -50%) rotate(45deg); /* Rotated sparkle effect */
+    animation: sparkle-hover-button 2s infinite linear; /* Continuous sparkle animation */
+    z-index: -1; /* Behind the button */
+  }
+  
+  /* Sparkle Animation for Button Hover */
+  @keyframes sparkle-hover-button {
+    0% {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(-100%) translateY(-100%);
+    }
+    50% {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(100%) translateY(100%);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(-100%) translateY(-100%);
+    }
+  }
+  
+
+/* Section Title */
+/* Section Title */
+.section-title {
+    text-align: center;
+    margin-top: 80px;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #ecf0f1; /* Light gray text for elegance */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: fadeInUp 1.5s ease-out; /* Fade-in animation */
+    position: relative;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  }
+  
+  /* Fade In Animation */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Hover Effect for Section Title */
+  .section-title:hover {
+    color: #f39c12; /* Gold color on hover */
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.4); /* Stronger glow effect on hover */
+    transform: translateY(-5px); /* Slight upward movement */
+  }
+  
+  /* Sparkle Effect for Section Title */
+  .section-title::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    opacity: 0.4;
+    pointer-events: none;
+    transform: translate(-50%, -50%) rotate(45deg); /* Rotated sparkle effect */
+    animation: sparkle-title 3s infinite linear; /* Continuous sparkle animation */
+    z-index: -1; /* Behind the title text */
+  }
+  
+  /* Sparkle Animation for Section Title */
+  @keyframes sparkle-title {
+    0% {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(-100%) translateY(-100%);
+    }
+    50% {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(100%) translateY(100%);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(-100%) translateY(-100%);
+    }
+  }
+  
+
+  @media (max-width: 768px) {
+    /* Hero Section */
+    .hero-section {
+      padding: 60px 20px;
+      background: linear-gradient(to right, #2c3e50, #34495e); /* Darker background for mobile */
+    }
+  
+    /* Hero Section Heading */
+    .hero-section h1 {
+      font-size: 2.5rem;
+      color: #ecf0f1; /* Light color for better contrast on mobile */
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3); /* Enhance text shadow on smaller screens */
+    }
+  
+    /* Hero Section Paragraph */
+    .hero-section p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      max-width: 100%; /* Ensure the text uses full width on smaller screens */
+      color: #ecf0f1; /* Consistent color with heading */
+      opacity: 0.9;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    }
+  
+    /* Section Title */
+    .section-title {
+      font-size: 2.2rem;
+      color: #ecf0f1; /* Light color for contrast */
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Enhance shadow for mobile view */
+      animation: fadeInUp 1.5s ease-out; /* Keep the fade-in effect */
+    }
+  
+    /* Sparkle Effect for Section Title (Mobile) */
+    .section-title::after {
+      width: 150%; /* Reduced size for mobile */
+      height: 150%;
+      opacity: 0.3; /* Less opacity for smaller screens */
+    }
+  
+    /* Hero Button */
+    .hero-btn {
+      padding: 14px 30px;
+      font-size: 1rem; /* Adjust font size for smaller screens */
+      border-radius: 25px; /* Slightly smaller border-radius */
+    }
+  
+    /* Hero Button Hover Effect */
+    .hero-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 0 10px rgba(231, 76, 60, 0.4); /* Reduced glow for mobile */
+    }
+  
+    /* Sparkle Effect for Hero Button */
+    .hero-btn:hover::after {
+      animation: sparkle-hover-button 2s infinite linear;
+      opacity: 0.5; /* Adjust sparkle opacity for mobile */
+    }
+  
+    /* Section Title Hover */
+    .section-title:hover {
+      color: #f39c12; /* Gold color on hover */
+      text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.4); /* Stronger glow effect */
+      transform: translateY(-5px); /* Slight upward movement */
+    }
+  }
+  
+  @keyframes sparkle-hover-button {
+    0% {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(-100%) translateY(-100%);
+    }
+    50% {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(100%) translateY(100%);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(-100%) translateY(-100%);
+    }
+  }
+  
+
+/* Animation Keyframes */
+/* Enhanced Fade-In Up with Sparkle Effect */
+@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px); /* Starts from below */
+    }
+    50% {
+      opacity: 0.6; /* Slight fade at halfway */
+      transform: translateY(10px); /* Starts moving up */
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0); /* Reached final position */
+    }
+  }
+  
+  /* Applying Sparkle Effect to Elements with Fade-In Up */
+  .sparkle-fadeInUp {
+    animation: fadeInUp 1.5s ease-out, sparkle-effect 3s infinite linear;
+    position: relative; /* For the sparkle effect */
+    color: #ecf0f1; /* Light color for the text */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Subtle text shadow for depth */
+  }
+  
+  /* Sparkle Animation for Fade-In Up */
+  @keyframes sparkle-effect {
+    0% {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(-100%) translateY(-100%);
+    }
+    25% {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(100%) translateY(-100%);
+      opacity: 0.4; /* Slightly reduced opacity */
+    }
+    50% {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(100%) translateY(100%);
+      opacity: 0.8; /* Sparkle becomes more visible */
+    }
+    75% {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(-100%) translateY(100%);
+      opacity: 0.4;
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(-100%) translateY(-100%);
+      opacity: 0.6;
+    }
+  }
+  
+  /* Adding Sparkle Effect to Title or Element */
+  .sparkle-fadeInUp::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    opacity: 0.5;
+    pointer-events: none;
+    transform: translate(-50%, -50%) rotate(45deg); /* Rotated sparkle */
+    z-index: -1; /* Behind the text */
+  }
+  
+
+    
+   /* About Image */
+/* About Image Container */
+.about-img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%; /* Circle shape */
+    object-fit: cover; /* Ensures image fits the circle without distortion */
+    border: 8px solid #6a11cb; /* Gradient border with purple color */
+    padding: 5px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+    transition: all 0.4s ease-in-out;
+    overflow: hidden; /* Prevents overflow of image */
+    position: relative; /* For the sparkle and glow effects */
+  }
+  
+  /* Hover Effect for About Image */
+  .about-img:hover {
+    transform: scale(1.1) rotate(-5deg); /* Zoom-in and slight rotation */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25), 0 0 35px rgba(106, 17, 203, 0.6); /* Soft glowing shadow */
+    border-color: #e74c3c; /* Red border on hover */
+  }
+  
+  /* Sparkle Effect for About Image */
+  .about-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); /* Soft sparkle */
+    animation: sparkle-effect 3s infinite linear; /* Continuous sparkle effect */
+    z-index: 1;
+    pointer-events: none; /* Ensures interaction remains with the image */
+  }
+  
+  /* Sparkle Animation */
+  @keyframes sparkle-effect {
+    0% {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(-100%) translateY(-100%);
+      opacity: 0.2;
+    }
+    50% {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(100%) translateY(100%);
+      opacity: 0.6;
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(45deg) translateX(-100%) translateY(-100%);
+      opacity: 0.4;
+    }
+  }
+  
+  /* Glowing Border Effect on Hover */
+  .about-img:hover::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    border-radius: 50%;
+    border: 2px solid rgba(37, 117, 252, 0.7); /* Blue glowing border */
+    box-shadow: 0 0 15px rgba(37, 117, 252, 0.8); /* Glowing outer shadow */
+    animation: pulse-border 2s infinite ease-in-out; /* Pulse effect for border */
+    z-index: -1; /* Behind the image */
+  }
+  
+  /* Pulse Animation for Border */
+  @keyframes pulse-border {
+    0% {
+      box-shadow: 0 0 15px rgba(37, 117, 252, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(37, 117, 252, 1);
+    }
+    100% {
+      box-shadow: 0 0 15px rgba(37, 117, 252, 0.5);
+    }
+  }
+  
+  /* Inner Glow for Image Hover */
+  .about-img:hover::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    border-radius: 50%;
+    background: rgba(231, 76, 60, 0.3); /* Red inner glow on hover */
+    animation: inner-glow 2s infinite alternate; /* Pulsing red inner glow */
+    z-index: 2;
+  }
+  
+  /* Inner Glow Animation */
+  @keyframes inner-glow {
+    0% {
+      box-shadow: 0 0 15px rgba(231, 76, 60, 0.3), 0 0 25px rgba(231, 76, 60, 0.5);
+    }
+    100% {
+      box-shadow: 0 0 30px rgba(231, 76, 60, 0.5), 0 0 50px rgba(231, 76, 60, 0.7);
+    }
+  }
+  
+  /* Optional Glow Effect on Hover */
+  .about-img:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(102, 252, 241, 0.5), 0 0 30px rgba(102, 252, 241, 0.7), 0 0 45px rgba(102, 252, 241, 0.8); /* Blue glow */
+    pointer-events: none;
+    animation: sparkle-glow 3s infinite linear; /* Continuous sparkle glow */
+    z-index: 1; /* Positioned above the image */
+  }
+  
+  /* Sparkle Glow Animation */
+  @keyframes sparkle-glow {
+    0% {
+      box-shadow: 0 0 20px rgba(102, 252, 241, 0.5), 0 0 30px rgba(102, 252, 241, 0.7), 0 0 45px rgba(102, 252, 241, 0.8);
+    }
+    25% {
+      box-shadow: 0 0 30px rgba(102, 252, 241, 0.6), 0 0 40px rgba(102, 252, 241, 0.8), 0 0 50px rgba(102, 252, 241, 1);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(102, 252, 241, 0.8), 0 0 50px rgba(102, 252, 241, 1), 0 0 65px rgba(102, 252, 241, 1.2);
+    }
+    75% {
+      box-shadow: 0 0 50px rgba(102, 252, 241, 0.9), 0 0 60px rgba(102, 252, 241, 1), 0 0 75px rgba(102, 252, 241, 1.2);
+    }
+    100% {
+      box-shadow: 0 0 20px rgba(102, 252, 241, 0.5), 0 0 30px rgba(102, 252, 241, 0.7), 0 0 45px rgba(102, 252, 241, 0.8);
+    }
+  }
+  
+    
+    
+    /* Skills List with Sparkle Black Dynamic UI */
+.skills-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 10px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9));
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 0;
+  }
+  
+  /* Individual Skill Item */
+  .skills-list .skill-item {
+    background: #2c3e50;
+    color: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    width: 200px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Hover Effect for Skill Item */
+  .skills-list .skill-item:hover {
+    transform: scale(1.1);
+    background: #1abc9c;
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(26, 188, 156, 0.6);
+    animation: sparkle-item 2s infinite linear; /* Add sparkle animation on hover */
+  }
+  
+  /* Sparkle Effect on Hover */
+  @keyframes sparkle-item {
+    0% {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 0 20px rgba(26, 188, 156, 0.6);
+    }
+    25% {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4), 0 0 25px rgba(26, 188, 156, 0.7);
+    }
+    50% {
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5), 0 0 30px rgba(26, 188, 156, 0.8);
+    }
+    75% {
+      box-shadow: 0 10px 18px rgba(0, 0, 0, 0.6), 0 0 35px rgba(26, 188, 156, 1);
+    }
+    100% {
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 0 20px rgba(26, 188, 156, 0.6);
+    }
+  }
+  
+  /* Sparkle Background Effect (Overall List) */
+  .skills-list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.5));
+    z-index: -1;
+    animation: sparkle-background 3s infinite linear; /* Add continuous sparkle background animation */
+  }
+  
+  /* Sparkle Animation for Background */
+  @keyframes sparkle-background {
+    0% {
+      opacity: 0.3;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.5));
+    }
+    50% {
+      opacity: 0.6;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.3), rgba(0, 0, 0, 0.5));
+    }
+    100% {
+      opacity: 0.3;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.5));
+    }
+  }
+  
+    
+    /* Skills List Individual Skill with Sparkle Black and Dynamic UI */
+.skills-list .skill {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-align: center;
+    width: 200px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  /* Hover Effect with Glow and Sparkle */
+  .skills-list .skill:hover {
+    transform: scale(1.1) rotate(5deg); /* Slight zoom and rotation */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(102, 252, 241, 0.6); /* Glowing shadow */
+    background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%); /* Reverse gradient for hover effect */
+    animation: sparkle-glow 1.5s infinite ease-in-out; /* Continuous sparkle animation */
+  }
+  
+  /* Sparkle Animation */
+  @keyframes sparkle-glow {
+    0% {
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1), 0 0 20px rgba(102, 252, 241, 0.4);
+    }
+    25% {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 25px rgba(102, 252, 241, 0.6);
+    }
+    50% {
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3), 0 0 30px rgba(102, 252, 241, 0.8);
+    }
+    75% {
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 35px rgba(102, 252, 241, 1);
+    }
+    100% {
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1), 0 0 20px rgba(102, 252, 241, 0.4);
+    }
+  }
+  
+  /* Optional sparkle effect for the inner content */
+  .skills-list .skill::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    box-shadow: 0 0 15px rgba(102, 252, 241, 0.4), 0 0 30px rgba(102, 252, 241, 0.7), 0 0 45px rgba(102, 252, 241, 1);
+    z-index: -1;
+    animation: sparkle-background 2s infinite linear;
+  }
+  
+  /* Sparkle Background Animation */
+  @keyframes sparkle-background {
+    0% {
+      box-shadow: 0 0 15px rgba(102, 252, 241, 0.4), 0 0 30px rgba(102, 252, 241, 0.7), 0 0 45px rgba(102, 252, 241, 1);
+    }
+    50% {
+      box-shadow: 0 0 25px rgba(102, 252, 241, 0.6), 0 0 40px rgba(102, 252, 241, 1), 0 0 60px rgba(102, 252, 241, 1.2);
+    }
+    100% {
+      box-shadow: 0 0 15px rgba(102, 252, 241, 0.4), 0 0 30px rgba(102, 252, 241, 0.7), 0 0 45px rgba(102, 252, 241, 1);
+    }
+  }
+  
+    
+   /* Skills List Individual Skill Hover with Sparkle Black and Dynamic UI */
+.skills-list .skill:hover {
+    transform: translateY(-5px); /* Slightly lift the skill item */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25), 0 0 15px rgba(102, 252, 241, 0.8); /* Glow shadow */
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Slight color change */
+    animation: sparkle-glow 1.5s infinite ease-in-out; /* Sparkle glow animation */
+    z-index: 1;
+  }
+  
+  /* Sparkle Glow Animation */
+  @keyframes sparkle-glow {
+    0% {
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15), 0 0 15px rgba(102, 252, 241, 0.4);
+    }
+    25% {
+      box-shadow: 0 14px 22px rgba(0, 0, 0, 0.2), 0 0 20px rgba(102, 252, 241, 0.6);
+    }
+    50% {
+      box-shadow: 0 16px 24px rgba(0, 0, 0, 0.25), 0 0 30px rgba(102, 252, 241, 1);
+    }
+    75% {
+      box-shadow: 0 18px 26px rgba(0, 0, 0, 0.3), 0 0 35px rgba(102, 252, 241, 1);
+    }
+    100% {
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15), 0 0 15px rgba(102, 252, 241, 0.4);
+    }
+  }
+  
+    
+   /* Skills List Individual Skill Active State with Sparkle Black and Dynamic UI */
+.skills-list .skill:active {
+    transform: translateY(2px); /* Slightly push the skill item down when clicked */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 10px rgba(102, 252, 241, 0.8); /* Soft shadow with sparkle */
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Keep the hover effect */
+    animation: sparkle-press 0.5s ease-out; /* Sparkle effect when clicked */
+    z-index: 1;
+  }
+  
+  /* Sparkle Press Animation */
+  @keyframes sparkle-press {
+    0% {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 10px rgba(102, 252, 241, 0.4);
+    }
+    50% {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 0 20px rgba(102, 252, 241, 0.8);
+    }
+    100% {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 10px rgba(102, 252, 241, 0.4);
+    }
+  }
+  
+    
+    
+    /* Project Card with Sparkle Black and Dynamic UI */
+.project-card {
+    margin-bottom: 30px;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    background-color: #1e1e1e; /* Dark background for the sparkle effect */
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), 0 0 25px rgba(102, 252, 241, 0.6); /* Soft shadow with glow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    position: relative; /* Ensure the hover effect is on top */
+  }
+  
+  /* Add subtle glow on hover */
+  .project-card:hover {
+    transform: translateY(-5px); /* Lift the card on hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3), 0 0 30px rgba(102, 252, 241, 0.8); /* Stronger shadow and glow */
+    border-color: #2575fc; /* Add a bright blue glow effect on the border */
+  }
+  
+  /* Sparkle Effect Animation on Hover */
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(102, 252, 241, 0.2), transparent);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .project-card:hover::before {
+    opacity: 1;
+    animation: sparkle-glow 1.5s infinite ease-out; /* Sparkle animation */
+  }
+  
+  /* Sparkle Glow Animation */
+  @keyframes sparkle-glow {
+    0% {
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(102, 252, 241, 0.4);
+    }
+    50% {
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.25), 0 0 40px rgba(102, 252, 241, 0.8);
+    }
+    100% {
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(102, 252, 241, 0.4);
+    }
+  }
+  
+    
+    /* Project Card Hover with Sparkle Black and Dynamic UI */
+.project-card {
+    margin-bottom: 30px;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    background-color: #1e1e1e; /* Dark background for the sparkle effect */
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2), 0 0 25px rgba(102, 252, 241, 0.6); /* Soft shadow with glow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    position: relative; /* Ensure the hover effect is on top */
+  }
+  
+  /* Hover Effect */
+  .project-card:hover {
+    transform: translateY(-10px); /* Lift the card on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25), 0 0 40px rgba(102, 252, 241, 0.8); /* Enhanced shadow and glow */
+    border-color: #6a11cb; /* Vibrant purple-blue border on hover */
+    animation: sparkle-hover 1.5s ease-in-out infinite; /* Sparkle animation on hover */
+  }
+  
+  /* Sparkle Hover Animation */
+  @keyframes sparkle-hover {
+    0% {
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(102, 252, 241, 0.4);
+    }
+    50% {
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.3), 0 0 45px rgba(102, 252, 241, 0.9);
+    }
+    100% {
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2), 0 0 20px rgba(102, 252, 241, 0.4);
+    }
+  }
+  
+  /* Adding Subtle Sparkle Border Effect */
+  .project-card:hover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background: radial-gradient(circle, rgba(102, 252, 241, 0.2), transparent);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .project-card:hover::before {
+    opacity: 1; /* Show the sparkle effect */
+  }
+  
+    
+    /* Project Card Image with Sparkle Black and Dynamic UI */
+.project-card img {
+    height: 220px;
+    width: 100%;
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
+    border-radius: 15px; /* Rounded corners to match the card's style */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  }
+  
+  /* Hover Effect */
+  .project-card img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    filter: brightness(1.2) contrast(1.2); /* Enhance brightness and contrast for emphasis */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3), 0 0 40px rgba(102, 252, 241, 0.6); /* Stronger shadow and glow */
+    border: 4px solid #6a11cb; /* Add a glowing border effect */
+  }
+  
+  /* Subtle Sparkle Effect on Hover */
+  .project-card img:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background: radial-gradient(circle, rgba(102, 252, 241, 0.4), transparent);
+    z-index: -1; /* Ensure the sparkle effect is behind the image */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .project-card img:hover::after {
+    opacity: 1; /* Show the sparkle effect on hover */
+  }
+  
+    
+    /* Project Card Image Hover Effect with Sparkle Black and Dynamic UI */
+.project-card img {
+    height: 220px;
+    width: 100%;
+    object-fit: cover; /* Ensures the image fits without distortion */
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    border-radius: 15px; /* Rounded corners for a sleek look */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  }
+  
+  /* Hover Effect */
+  .project-card img:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+    filter: brightness(0.9); /* Darken the image slightly */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(102, 252, 241, 0.6); /* Enhanced shadow with glow */
+    border: 4px solid #6a11cb; /* Glowing border on hover */
+  }
+  
+  /* Sparkle Effect on Hover */
+  .project-card img:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background: radial-gradient(circle, rgba(102, 252, 241, 0.4), transparent); /* Soft glowing sparkle */
+    z-index: -1; /* Keep the sparkle behind the image */
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Smooth fade-in effect */
+  }
+  
+  .project-card img:hover::after {
+    opacity: 1; /* Reveal the sparkle on hover */
+  }
+  
+    
+    /* Project Card Body with Sparkle Black and Dynamic UI */
+.project-card .card-body {
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, #6a11cb, #2575fc); /* Gradient background */
+    color: #ffffff;
+    border-radius: 15px; /* Smooth rounded corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    position: relative;
+  }
+  
+  /* Hover Effect - Dynamic Glow and Movement */
+  .project-card .card-body:hover {
+    background: linear-gradient(to bottom, #2980b9, #6dd5fa); /* Shift gradient for hover effect */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3), 0 0 25px rgba(102, 252, 241, 0.6); /* Enhanced shadow with glow */
+    transform: translateY(-5px); /* Slight upward movement on hover */
+    z-index: 1; /* Bring card to the forefront */
+  }
+  
+  /* Sparkle Effect */
+  .project-card .card-body:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background: radial-gradient(circle, rgba(102, 252, 241, 0.4), transparent); /* Soft glowing sparkle */
+    opacity: 0;
+    transition: opacity 0.5s ease; /* Smooth fade-in effect */
+    z-index: -1; /* Ensure sparkle stays behind text and content */
+  }
+  
+  .project-card .card-body:hover::after {
+    opacity: 1; /* Show the sparkle effect on hover */
+  }
+  
+  /* Text Enhancements */
+  .project-card .card-body h5 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Subtle text shadow */
+  }
+  
+  .project-card .card-body p {
+    font-size: 1rem;
+    opacity: 0.9;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    transition: opacity 0.3s ease;
+  }
+  
+  .project-card .card-body:hover p {
+    opacity: 1; /* Text becomes fully visible on hover */
+  }
+  
+    
+    /* Project Card Title */
+.project-card .card-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #f5f5f5; /* Soft white for a sleek contrast */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Soft glow for text */
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+  
+  /* Hover effect on Card Title */
+  .project-card .card-title:hover {
+    color: #e74c3c; /* Highlight the title on hover */
+    text-shadow: 2px 2px 15px rgba(231, 76, 60, 0.7); /* Bright red glow effect */
+  }
+  
+  /* Project Card Text */
+  .project-card .card-text {
+    font-size: 1rem;
+    opacity: 0.9;
+    color: #ecf0f1; /* Slightly muted text color for readability */
+    line-height: 1.6;
+    transition: opacity 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Hover effect on Card Text */
+  .project-card .card-text:hover {
+    opacity: 1; /* Increase opacity on hover for better visibility */
+    color: #bdc3c7; /* Slight change in color on hover */
+  }
+  
+  /* Project Card Button */
+  .project-card .card-btn {
+    margin-top: 15px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    background-color: #6a11cb; /* Purple background */
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    position: relative; /* To position the glowing effect */
+    z-index: 1;
+  }
+  
+  /* Hover effect on Card Button */
+  .project-card .card-btn:hover {
+    background-color: #e74c3c; /* Change to a red hue on hover */
+    color: #ffffff;
+    transform: translateY(-5px); /* Slight upward movement */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+  }
+  
+  /* Sparkle Glow on Button */
+  .project-card .card-btn:hover::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(102, 252, 241, 0.5), transparent);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: sparkleGlow 1s infinite; /* Add continuous glowing effect */
+    z-index: -1; /* Keep behind the text */
+  }
+  
+  /* Sparkle Animation */
+  @keyframes sparkleGlow {
+    0% {
+      transform: scale(0.8);
+      opacity: 0.4;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.8);
+      opacity: 0.4;
+    }
+  }
+  
+    
+    
+    /* CV Link */
+.cv-link {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    color: #f5f5f5;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #2c3e50; /* Dark background */
+    border-radius: 5px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    position: relative; /* To position the glowing effect */
+    z-index: 1;
+  }
+  
+  /* Hover effect on CV Link */
+  .cv-link:hover {
+    background-color: #e74c3c; /* Red background on hover */
+    color: white;
+    transform: translateY(-3px); /* Slight lift effect */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Soft shadow on hover */
+  }
+  
+  /* Sparkle effect on Hover */
+  .cv-link:hover::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(102, 252, 241, 0.5), transparent); /* Sparkle glow */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: sparkleGlow 1s infinite; /* Add continuous glowing effect */
+    z-index: -1; /* Keep the effect behind the text */
+  }
+  
+  /* Sparkle Glow Animation */
+  @keyframes sparkleGlow {
+    0% {
+      transform: scale(0.8);
+      opacity: 0.4;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.8);
+      opacity: 0.4;
+    }
+  }
+  
+    
+    /* Footer */
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, #2c3e50, #34495e); /* Gradient background for depth */
+    color: white;
+    padding: 30px 20px; /* Adjusted padding to minimize bottom space */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Softer, larger shadow for depth */
+    border-top: 3px solid #e74c3c; /* Subtle red border at the top */
+    z-index: 1;
+    margin-bottom: 0; /* Removed margin to prevent extra space below */
+  }
+  
+  /* Footer Link Styling */
+  .footer-link {
+    color: #f5f5f5; /* Light gray color for links */
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.3rem; /* Slightly larger text */
+    position: relative;
+    padding: 5px;
+    transition: all 0.3s ease; /* Smooth all hover effects */
+    display: inline-block; /* Align links next to each other */
+    font-weight: 600; /* Bolder text for more emphasis */
+  }
+  
+  /* Footer Link Hover Effect */
+  .footer-link:hover {
+    color: #e74c3c; /* Bright red hover effect */
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Deepened shadow on hover */
+    text-decoration: none; /* Remove underline on hover */
+  }
+  
+  /* Footer Link Glow Effect on Hover */
+  .footer-link:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(102, 252, 241, 0.6), transparent); /* Brighter sparkle glow */
+    animation: sparkleGlow 1.2s infinite; /* Faster glowing animation */
+    z-index: -1; /* Behind the text */
+  }
+  
+  /* Icon Spacing and Style */
+  .footer-link i {
+    margin-right: 12px; /* Increase space between icon and text */
+    font-size: 1.6rem; /* Larger icons for better visibility */
+    transition: transform 0.3s ease; /* Smooth animation for icon */
+  }
+  
+  .footer-link:hover i {
+    transform: rotate(15deg); /* Slight rotation effect on hover */
+  }
+  
+  /* Sparkle Glow Animation */
+  @keyframes sparkleGlow {
+    0% {
+      transform: scale(0.8);
+      opacity: 0.4;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.8);
+      opacity: 0.4;
+    }
+  }
+  
+  /* Remove any extra space below the page */
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer {
+    margin-top: auto; /* Push the footer to the bottom of the page */
+  }
+  
+    
+  </style>
+</head>
+<body>
+  
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">Shravani Jitendra Patil</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+         
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <h1>Hi, I'm Shravani Jitendra Patil</h1>
+      <p>A passionate Computer Engineering student eager to learn and grow.</p>
+      <a href="shravani_cv.pdf" class="btn btn-light">View My CV</a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="container my-5">
+    <h2 class="section-title">About Me</h2>
+    <div class="row align-items-center">
+      <div class="col-md-6 text-center">
+        <img src="Isha.jpeg" alt="Shravani" class="about-img">
+      </div>
+      <div class="col-md-6">
+        <p><b>Hello! I'm Shravani, a Computer Engineering Student at R C Patel Institute of Technology. I love exploring new technologies and creating projects to enhance my skills.</b></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="container my-5">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-list">
+      <div class="skill">Java</div>
+      <div class="skill">Spring</div>
+      <div class="skill">HTML/CSS</div>
+      <div class="skill">Python</div>
+      <div class="skill">SQL</div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="container my-5">
+    <h2 class="section-title">Projects</h2>
+    <div class="row">
+      <!-- 6 Project Cards -->
+      <div class="col-md-4">
+        <div class="card project-card">
+          <img src="BookChef1.jpeg" class="card-img-top" alt="BookChef">
+          <div class="card-body">
+            <h5 class="card-title"><b>BookChef</b></h5>
+            <p>The BookChef Project is an online chef booking platform developed using Java. This system allows users to browse and book chefs for various occasions or personal cooking sessions.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card project-card">
+          <img src="ExamOrg1.jpeg" class="card-img-top" alt="Online Exam">
+          <div class="card-body">
+            <h5 class="card-title"><b>Online Examination System</b></h5>
+            <p>The Online Examination System project I developed using Java is a web-based platform that allows efficient management of exams. It provides different roles for Admin, Teachers, and Students</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card project-card">
+          <img src="SocialMedia1.jpeg" class="card-img-top" alt="Talkzi">
+          <div class="card-body">
+            <h5 class="card-title"><b>Talkzi Social Media</b></h5>
+            <p>The Talkzi Social Media Platform is a web project built using Java, JSP, and MySQL. It allows users to sign up, log in, share posts, like, comment, and chat with others.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card project-card">
+          <img src="Inventory1.jpeg" class="card-img-top" alt="Inventory">
+          <div class="card-body">
+            <h5 class="card-title"><b>Inventory Management</b></h5>
+            <p>The Inventory Management System is a Java-based application designed to efficiently manage raw and processed materials. It includes features for adding, updating,viewing as well as issuing materials.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card project-card">
+          <img src="Amazon1.jpeg" class="card-img-top" alt="Bank">
+          <div class="card-body">
+            <h5 class="card-title"><b>Amazon Clone</b></h5>
+            <p>The Amazon Clone project is a simplified e-commerce website built using HTML and CSS to replicate the core UI features of Amazon's homepage. It includes a visually appealing layout with a responsive design. </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card project-card">
+          <img src="Expense1.jpeg" class="card-img-top" alt="Grade Tracker">
+          <div class="card-body">
+            <h5 class="card-title"><b>Expense Tracker</b></h5>
+            <p>The Expense Tracker project is a Python-based application designed to help users efficiently manage their finances. It allows users to record their income and expenses. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CV Section -->
+  
+
+  <!-- Footer -->
+  <!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2024 Shravani Jitendra Patil. All Rights Reserved.</p>
+    <p>
+      <a href="https://github.com/Shravani-Jitendra-Patil" target="_blank" class="footer-link">
+        <i class="fab fa-github"></i> GitHub
+      </a> |
+      <a href="https://www.linkedin.com/in/shravani-patil-9536051b0?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="footer-link">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a> |
+      <a href="https://x.com/Shravanipatil27?t=zktCV6heBRtI-7twohMbNA&s=09" target="_blank" class="footer-link">
+        <i class="fab fa-twitter"></i> Twitter
+      </a>
+    </p>
+  </footer>
+  
+  <!-- Font Awesome CDN -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
